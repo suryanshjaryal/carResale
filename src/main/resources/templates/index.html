@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secondhand Car Resale</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to CSS for styling -->
+</head>
+<body>
+<h1>Secondhand Car Resale Form</h1>
+<form th:action="@{/api/cars}" method="POST" th:object="${carResale}">
+  <label for="make">Make:</label>
+  <input type="text" id="make" name="make" th:field="*{make}" required >
+
+  <label for="model">Model:</label>
+
+  <input type="text" id="model" name="model" th:field="*{model}" required>
+
+  <label for="kmRun">Kilometers Run:</label>
+  <input type="number" id="kmRun" name="kmRun" th:field="*{kmRun}" required>
+
+  <label for="price">Price:</label>
+  <input type="number" id="price" name="price" th:field="*{th:field="*{Price}"}" required>
+
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>
